@@ -1,7 +1,7 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'my_new_project'
+name: 'dbt_pet_project'
 version: '1.0.0'
 config-version: 2
 
@@ -26,6 +26,18 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
+
+models:
+  dbt_pet_project:
+    staging:
+      +materialized: view
+
+    marts:
+      +materialized: table
+
+    
+
+  
 
 # In dbt, the default materialization for a model is a view. This means, when you run 
 # dbt run or dbt build, all of your models will be built as a view in your data platform. 
