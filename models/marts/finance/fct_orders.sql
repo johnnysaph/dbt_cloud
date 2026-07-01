@@ -12,5 +12,5 @@ select
     o.order_id,
     sp.payment_amount as amount
 from
-    orders o join success_payments sp
+    orders as o join success_payments as sp
     on o.order_id = sp.order_id
